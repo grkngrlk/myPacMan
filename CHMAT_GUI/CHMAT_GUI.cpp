@@ -22,7 +22,7 @@ HINSTANCE hInst;   // current instance
 HWND     hWnd, hEdit, hEditScoreLabel, hEditScoreDisplayer, hEditPacmanLifeLabel, hEditPacmanLifeDisplayer, HButton1, HButton2, HButton3, Hmainbmp;    //parent window //
 
 LPCTSTR lpszAppName = "GEN32";
-LPCTSTR lpszTitle = "GENERIC32";
+LPCTSTR lpszTitle = "PacMan";
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 
@@ -873,10 +873,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			HUNTING_MODE_TIMER = 5000;
 			t.Format(_T("%d"), pacman.getLife());
 			SetWindowText(hEditPacmanLifeDisplayer, t);
+			SetFocus(hWnd);
 		}
 		break;
 		case IDC_BUTTON2:
 		{
+			SetFocus(hWnd);
 			exit(0);
 		}
 		break;
